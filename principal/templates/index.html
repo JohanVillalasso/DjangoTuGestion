@@ -1,0 +1,56 @@
+{% load static %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% bootstrap_messages %}
+
+<!doctype html>
+<html lang="es">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <title>Inicio de Sesión</title>
+</head>
+
+<body>
+
+  <!-- Hero image -->
+  <section class="bg-hero-image min-vh-100">
+    <article class="bg-alpha-color min-vh-100">
+
+      <!-- Login -->
+      <div class="container-fluid">
+        <div class="row align-items-center justify-content-center min-vh-100">
+          <div class="col-12 col-lg-4">
+            <div class="login-form ">
+              <form action="#" method="post" class="rounded">
+                <img class="img-fluid mb-3" src="{% static 'img/logo-2.png' %}" alt="logo Envía">
+                <h2 class="text-center fs-4">Inicio de Sesión</h2>
+                <div class="form-group">
+                  <input type="text" class="form-control rounded mb-3" placeholder="Usuario" required="required">
+                </div>
+                <div class="form-group">
+                  <input type="password" class="form-control rounded mb-3" placeholder="Contraseña" required="required">
+                </div>
+                <div class="form-group">
+                  <a class="btn btn-danger btn-block form-control rounded mb-3 fs-5 fw-bold p-1"
+                    href="{% url 'menu-ppal' %}">INGRESAR</a>
+                </div>
+                <a href="password-forgot.html">Recuperar contraseña</a>
+                <span class="d-block text-center mt-3 fs-12">
+                  © 2023 VMC | Envía Colvanes.
+                </span>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+  </section>
+
+</body>
+
+</html>
