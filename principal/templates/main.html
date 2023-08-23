@@ -1,12 +1,11 @@
 {% extends 'partials/body.html' %}
 {% load static %}
 
+
 {% block contenido %}
+ 
 
-<!-- <section class="bg-hero-image2 min-vh-100">
-  <article class="min-vh-100"> -->
-
-    <main class="flex-grow-1">
+    <main class="flex-grow-1 ">
       <!-- Titulo -->
       <div class="text-center p-4">
         <h1 class="fs-3">¡Bienvenid@ al Sistema <b><i>TuGestión</i></b>!</h1>
@@ -21,7 +20,7 @@
               <div class="btn-group dropend">
                 <button class="btn btn-danger mb-2 fw-bold dropdown-toggle p-1" type="button" data-bs-toggle="dropdown"
                   aria-expanded="false">
-                  Generar Guia
+                  Generar Guía
                 </button>
                 <ul class="dropdown-menu dropdown-menu-dark">
                   <li class="nav-item"><a class="dropdown-item nav-link" href="{% url 'cap-guia' %}">Capturar Guía</a></li>
@@ -43,7 +42,7 @@
               <!-- Proyeccion de Cumplimiento -->
               <li class="nav-item">
                 <a href="{% url 'proy-cumpl' %}"
-                  class="btn btn-danger mb-2 fw-bold nav-link text-white p-1">Proyeccion
+                  class="btn btn-danger mb-2 fw-bold nav-link text-white p-1">Proyección
                   De
                   Cumplimiento</a>
               </li>
@@ -135,10 +134,9 @@
         </div>
       </div>
   
-    </main>
-    
-  <!-- </article>
-</section> -->
+    </main>    
+ 
+
 
 {% endblock contenido %}
 
