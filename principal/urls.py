@@ -10,7 +10,7 @@ urlpatterns = [
     path('clientes/',include('clientes.urls')),
     path('guia/',include('guia.urls')),
     path('menu/', menu_ppal, name=('menu-ppal')),
-    path('rutero/', rutero, name=('rutero')),
+    path('rutero/', rutero, name='rutero'),
     path('cap-guia/', cap_guia, name=('cap-guia')),
     path('seg-cliente/', seg_cliente, name=('seg-cliente')),
     path('proy-cumpl/', proy_cumpl, name=('proy-cumpl')),

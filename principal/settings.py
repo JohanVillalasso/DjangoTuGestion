@@ -26,11 +26,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'bootstrap5', # pip install django-bootstrap-v5
+    'crispy_forms', #pip install django-crispy-forms
+    'crispy_bootstrap5', #pip install crispy-bootstrap5
+    # pip install django-select2 pip install django-redis buscar en google git redis msi
     'usuarios',
     'ciudades',
     'clientes',
     'guia',
-    'bootstrap5', # python.exe -m pip install --upgrade pip
 ]
 
 MIDDLEWARE = [
