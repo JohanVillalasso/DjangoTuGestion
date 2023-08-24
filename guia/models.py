@@ -39,8 +39,8 @@ class Liquidador(models.Model):
   
   fecha_tarifa = models.DateField(auto_now=True, verbose_name="Fecha tarifas", help_text="MM/DD/AAAA")
   #foreignkey
-  cod_CiudDANE = models.ForeignKey(Ciudad, on_delete=models.CASCADE, related_name='ciudadLiquidador')
-  id_servicio = models.ForeignKey(Servicio, on_delete=models.CASCADE, verbose_name="Servicio", related_name='servicioLiquidador')
+  cod_CiudDANE = models.ForeignKey(Ciudad, on_delete=models.CASCADE, null=True, blank=False,related_name='ciudadLiquidador')
+  id_servicio = models.ForeignKey(Servicio, on_delete=models.CASCADE, null=True, blank=False,verbose_name="Servicio", related_name='servicioLiquidador')
 
 #GUÍA DESPACHO
 class GuiaDespacho(models.Model):
@@ -57,15 +57,15 @@ class Recogida(models.TextChoices):
     NO = '0', _('No')
 recogida = models.CharField(max_length=1, choices=Recogida.choices, default=Recogida.NO, verbose_name="Recogida?")
 #foreignkey
-id_usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE, related_name='usuarioDespacho')
-id_liquidador = models.ForeignKey(Liquidador, on_delete=models.CASCADE, verbose_name="Liquidador", related_name='liquidadorGuiaD')
+id_usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE, null=True, blank=False,related_name='usuarioDespacho')
+id_liquidador = models.ForeignKey(Liquidador, on_delete=models.CASCADE, null=True, blank=False,verbose_name="Liquidador", related_name='liquidadorGuiaD')
 
 #GUIA_ESTADO
 class GuiaEstado(models.Model):
   fecha_modificacion = models.DateField(auto_now=True, verbose_name="Fecha cambio estado guia", help_text="MM/DD/AAAA")
     #foreignkey
-  id_guia = models.ForeignKey(GuiaDespacho, on_delete=models.CASCADE, verbose_name="Guía", related_name='guiaEstado')
-  id_estado = models.ForeignKey(Estado, on_delete=models.CASCADE, verbose_name="Estado", related_name='estadoGuia')
+  id_guia = models.ForeignKey(GuiaDespacho, on_delete=models.CASCADE, null=True, blank=False,verbose_name="Guía", related_name='guiaEstado')
+  id_estado = models.ForeignKey(Estado, on_delete=models.CASCADE, null=True, blank=False,verbose_name="Estado", related_name='estadoGuia')
   
 #DESPACHO CIUDAD
 class DespachoCiudad(models.Model):
@@ -75,17 +75,17 @@ class DespachoCiudad(models.Model):
       
     tipo_ciudad = models.CharField(max_length=45, choices=TipoCiudad.choices, default=TipoCiudad.ORIGEN, verbose_name="Ciudad Origen Destino")
     #foreignkey
-    id_guia = models.ForeignKey(GuiaDespacho, on_delete=models.CASCADE, verbose_name="Guia", related_name='guiaDespacho')
-    cod_CiudDANE = models.ForeignKey(Ciudad, on_delete=models.CASCADE, related_name='CiudadDespacho')
+    id_guia = models.ForeignKey(GuiaDespacho, on_delete=models.CASCADE, null=True, blank=False,verbose_name="Guia", related_name='guiaDespacho')
+    cod_CiudDANE = models.ForeignKey(Ciudad, on_delete=models.CASCADE, null=True, blank=False,related_name='CiudadDespacho')
     
 #GUIA_CLIENTE
 class GuiaCliente(models.Model):
   #foreignkey
-  id_cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE, related_name='clienteGuia')
-  id_guia = models.ForeignKey(GuiaDespacho, on_delete=models.CASCADE, verbose_name="Guia", related_name='guiaCliente')
+  id_cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE, null=True, blank=False,related_name='clienteGuia')
+  id_guia = models.ForeignKey(GuiaDespacho, on_delete=models.CASCADE, null=True, blank=False,verbose_name="Guia", related_name='guiaCliente')
   
 #GUIA SERVICIO
 class GuiaServicio(models.Model):
   #foreignkey
-  id_guia = models.ForeignKey(GuiaDespacho, on_delete=models.CASCADE, verbose_name="Guia", related_name='guiaServicio')
-  id_servicio = models.ForeignKey(Servicio, on_delete=models.CASCADE, verbose_name="Servicio", related_name='ServicioGuia')
+  id_guia = models.ForeignKey(GuiaDespacho, on_delete=models.CASCADE, null=True, blank=False,verbose_name="Guia", related_name='guiaServicio')
+  id_servicio = models.ForeignKey(Servicio, on_delete=models.CASCADE, null=True, blank=False,verbose_name="Servicio", related_name='ServicioGuia')
