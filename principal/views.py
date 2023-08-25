@@ -48,3 +48,9 @@ def form_gcom(request):
     
     }
     return render (request, 'form-gcom.html', context)
+
+def e500(request):
+    context={
+    
+    }
+    return render (request, 'form-gcom.html', context)
