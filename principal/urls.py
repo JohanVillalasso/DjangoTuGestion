@@ -8,7 +8,6 @@ urlpatterns = [
 
     path('usuarios/', include('usuarios.urls')),
     path('ciudades/', include('ciudades.urls')),
-    path('clientes/', include('clientes.urls')),
     path('guia/', include('guia.urls')),
     path('menu/', menu_ppal, name=('menu-ppal')),
     path('rutero/', rutero, name='rutero'),

@@ -1,0 +1,42 @@
+{% extends 'partials/body-menu.html' %}
+{% load crispy_forms_tags %}
+
+{% block titulo_pg %}
+    <h1>Crear Usuarios</h1>
+{% endblock titulo_pg %}
+    
+
+{% block contenido %}
+<div class="container">
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form method="POST" id="crear-usuario-form" >
+            {{form|crispy}}
+            {% csrf_token %}
+            <input class="btn btn-success" type="submit" value="Crear">
+        </form>
+        {% if mensaje_alerta and request.method == "POST" %}
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script>
+            {% if "éxito" in mensaje_alerta %}
+            Swal.fire({
+                title: "Felicidades",
+                text: "{{ mensaje_alerta }}",
+                icon: "success",
+                onClose: () => {
+                    // Limpiar los campos del formulario
+                    document.getElementById("crear-usuario-form").reset();
+                }
+            });
+            {% else %}
+            Swal.fire({
+                title: "Algo salió mal",
+                text: "{{ mensaje_alerta }}",
+                icon: "error",
+            });
+            {% endif %}
+        </script>
+    {% endif %}</div>
+    </div>
+</div>
+{% endblock contenido %}

@@ -67,14 +67,6 @@ def form_gcom(request):
     return render(request, 'form-gcom.html', context)
 
 
-def loggedIn(request):
-    if request.user.is_authenticated:
-        respuesta = "Ingresado como " + request.user.username
-    else:
-        respuesta = "No estás autenticado."
-    return HttpResponse(respuesta)
-
-
 def logout_user(request):
     logout(request)
     return redirect('inicio')

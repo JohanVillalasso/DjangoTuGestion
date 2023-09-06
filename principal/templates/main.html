@@ -62,9 +62,9 @@
                   Usuarios
                 </button>
                 <ul class="dropdown-menu dropdown-menu-dark">
-                  <li class="nav-item"><a class="dropdown-item nav-link" href="{% url 'cap-guia' %}">Listar</a></li>
+                  <li class="nav-item"><a class="dropdown-item nav-link" href="{% url 'usuarios' %}">Listar</a></li>
                   <!-- Anular Guía -->
-                  <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#modalAnular">Crear</a>
+                  <li><a class="dropdown-item" href="{% url 'usuarios-crear' %}" >Crear</a>
                   </li>
                 </ul>
               </div>

@@ -1,8 +1,8 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 from django.core.validators import MinValueValidator
-from clientes.models import Cliente
 from ciudades.models import Ciudad
+from clientes.models import Cliente
 from usuarios.models import Usuario
 
 #SERVICIO

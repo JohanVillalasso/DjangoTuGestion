@@ -27,20 +27,21 @@ class PuntoVenta(models.Model):
 # USUARIO
 class Usuario(models.Model):
     codigo_nomina = models.CharField(
-        max_length=45, verbose_name="Código nómina")
-    cedula = models.CharField(max_length=15, verbose_name="Cédula")
+        max_length=45, unique=True, verbose_name="Código nómina")
+    cedula = models.CharField(max_length=15, unique=True, verbose_name="Cédula")
     nombre = models.CharField(max_length=60, verbose_name="Nombre")
     nombre_dos = models.CharField(max_length=60, verbose_name="Segundo nombre")
     apellido = models.CharField(max_length=60, verbose_name="Apellido")
     apellido_dos = models.CharField(
         max_length=60, verbose_name="Segundo apellido")
     correo = models.CharField(max_length=100, verbose_name="Correo")
+    telefono = models.CharField(max_length=20, verbose_name="Teléfono")
+    direccion = models.CharField(max_length=70, verbose_name="Dirección")
     pto_venta = models.ForeignKey(
         PuntoVenta, on_delete=models.CASCADE, null=True, blank=False,  related_name='UsuarioPVenta')
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     # Rol
-
     class Rol(models.TextChoices):
         Administrador = 'Administrador', _('Administrador')
         Empleado = 'Empleado', _('Empleado')
