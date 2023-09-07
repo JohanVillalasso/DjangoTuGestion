@@ -80,23 +80,17 @@ footer {
   background-color: var(--bg-color);
 }
 
+.bg-hero-image {
+  background-image: url(../img/hero-image.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
 .bg-alpha-color {
   background-color: var(--bg-alpha-color);
 }
 
-.bg-hero-image {
-  background-image: url(../img/hero-image2.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-}
-
-/* .bg-hero-image2 {
-  background-image: url(../img/patron.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-} */
 
 .fs-12 {
   font-size: 12px;

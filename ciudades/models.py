@@ -18,7 +18,7 @@ class Ciudad(models.Model):
   cod_CiudDANE = models.CharField(max_length=4, verbose_name="CódCiudad")
   nombre_ciudad = models.CharField(max_length=60, verbose_name="Ciudad")  
   
-  cod_DeptDANE = models.ForeignKey(Departamento, on_delete=models.CASCADE, verbose_name="CódDepartamento", related_name='ciudadDpto')
+  cod_DeptDANE = models.ForeignKey(Departamento, on_delete=models.CASCADE, null=True, blank=False, verbose_name="CódDepartamento", related_name='ciudadDpto')
   
   # Estado  
   class Estado(models.TextChoices):

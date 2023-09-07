@@ -43,9 +43,9 @@ class Cliente(models.Model):
     INACTIVO = '0', _('Inactivo')
   estado = models.CharField(max_length=1, choices=Estado.choices, default=Estado.ACTIVO, verbose_name="Estado")  
   
-  cod_CiudDANE = models.ForeignKey(Ciudad, on_delete=models.CASCADE, related_name='clienteCiudad') 
-  id_natural = models.ForeignKey(PersonaNatural, on_delete=models.CASCADE, verbose_name="Id persona natural", related_name='PerNatural')
-  id_juridica = models.ForeignKey(PersonaJuridica, on_delete=models.CASCADE, verbose_name="Id persona jurídica", related_name='PerJuridica')
+  cod_CiudDANE = models.ForeignKey(Ciudad, on_delete=models.CASCADE, null=True, blank=False,related_name='clienteCiudad') 
+  id_natural = models.ForeignKey(PersonaNatural, on_delete=models.CASCADE, null=True, blank=False, verbose_name="Id persona natural", related_name='PerNatural')
+  id_juridica = models.ForeignKey(PersonaJuridica, on_delete=models.CASCADE, null=True, blank=False, verbose_name="Id persona jurídica", related_name='PerJuridica')
   
   
   def __str__(self):
