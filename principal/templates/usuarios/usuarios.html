@@ -1,11 +1,116 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Usuarios</title>
-</head>
-<body>
-    <h1>Esta es la app Usuarios</h1>
-</body>
-</html>
+{% extends 'partials/body.html' %}
+{% load static %}
+
+{% block contenido %}
+<div class="container-fluid">
+  <div class="row">
+      <div class="col-1">
+          <div class="col mt-3">
+              <a class="btn btn-dark" href="{% url 'menu-ppal' %}"><i class="bi bi-arrow-left-circle-fill"></i> Regresar</a>
+          </div>
+      </div>
+      <div class="col-1">
+          <div class="col mt-3">
+              <a class="btn btn-success" href="{% url 'usuarios-crear' %}"><i class="bi bi-arrow-left-circle-fill"></i> Crear Usuario</a>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+
+
+  </div>
+</div>
+
+  <h1 class="fs-3 text-center py-3">RUTERO DE RECOLECCIÓN</h1>
+
+  <!-- Datos de PDS -->
+  <div class="container-fluid">
+    <div class="row mb-3">
+      <!-- Datos receptoria -->
+      <div class="col-3 mb-4 ">
+        <div class="input-group align-items-center">
+          <label class="" for="">RECEPTORÍA</label>
+          <input type="text" class="form-control ms-2 rounded-3" disabled>
+        </div>
+      </div>
+      <div class="col-3 mb-4">
+        <div class="input-group align-items-center">
+          <label for="">CÓDIGO</label>
+          <input type="text" class="form-control ms-2 rounded-3" disabled>
+        </div>
+      </div>
+      <div class="col-3 mb-4">
+        <div class="input-group align-items-center">
+          <label for="">REGIONAL</label>
+          <input type="text" class="form-control ms-2 rounded-3" disabled>
+        </div>
+      </div>
+      <div class="col-3 mb-4">
+        <div class="input-group align-items-center">
+          <label for="">MES/AÑO</label>
+          <input type="text" class="form-control ms-2 rounded-3" disabled>
+        </div>
+      </div>
+
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="table-responsive">
+              <table id="example" class="table table-hover display responsive nowrap" cellspacing="0"
+                style=" width:100%">
+                <thead class="fs-14">        
+                  <tr class="bg-gris text-white">
+                    <th scope="col">Código Nómina</th>
+                    <th scope="col">Cédula</th>
+                    <th scope="col">Nombre1</th>
+                    <th scope="col">Nombre2</th>
+                    <th scope="col">Apellido1</th>
+                    <th scope="col">Apellido2</th>
+                    <th scope="col">Correo</th>
+                    <th scope="col">Teléfono</th>
+                    <th scope="col">Dirección</th>
+                    <th scope="col">Punto de Venta</th>
+                    <th scope="col">User</th>
+                    <th scope="col">Rol</th>
+                    <th scope="col">Estado</th>
+                    <th scope="col">Grupo</th>
+                    <th scope="col">Acciones</th>
+                  </tr>
+                </thead>
+
+                <tbody class="fs-14">
+                  {% for usuario in usuarios %}
+                  <tr>
+                    {% if usuario.estado != '0' %}
+                    <th scope="row">{{usuario.codigo_nomina}}</th>
+                    <td scope="row">{{usuario.cedula}}</td>
+                    <td scope="row">{{usuario.nombre}}</td>
+                    <td scope="row">{{usuario.nombre_dos}}</td>
+                    <td scope="row">{{usuario.apellido}}</td>
+                    <td scope="row">{{usuario.apellido_dos}}</td>
+                    <td scope="row">{{usuario.correo}}</td>
+                    <td scope="row">{{usuario.telefono}}</td>
+                    <td scope="row">{{usuario.direccion}}</td>
+                    <td scope="row">{{usuario.pto_venta}}</td>
+                    <td scope="row">{{usuario.user}}</td>
+                    <td scope="row">{{usuario.rol}}</td>
+                    <td scope="row">{{usuario.estado}}</td>
+                    <td scope="row">{{usuario.user.groups.all.0}}</td>
+                    <td scope="row"><a class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Editar"href="#"><i class="fas fa-edit"></i></a>
+                      <a class="btn btn-danger" data-bs-toggle="tooltip" data-bs-placement="top" title="Eliminar"href="#"><i class="fas fa-trash-alt"></i></a>
+                    </td>
+                    {% endif %}
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+<script src="{% static 'js/config-dt.js' %}"></script>
+{% endblock contenido %}
