@@ -56,3 +56,10 @@ def form_gcom(request):
       "titulo": titulo
     }
     return render (request, 'form-gcom.html', context)
+
+def e404(request):
+    titulo = "Error 404"
+    context={
+      "titulo": titulo
+    }
+    return render (request, 'e404.html', context)    
