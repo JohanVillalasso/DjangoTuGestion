@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path, include
-from principal.views import inicio_sesion, menu_ppal, rutero, cap_guia, seg_cliente, proy_cumpl, eje_acu, form_gcom
+from principal.views import inicio_sesion, menu_ppal, rutero, cap_guia, seg_cliente, proy_cumpl, eje_acu, form_gcom, e500
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -16,4 +16,5 @@ urlpatterns = [
     path('proy-cumpl/', proy_cumpl, name=('proy-cumpl')),
     path('eje-acu/', eje_acu, name=('eje-acu')),
     path('form-gcom/', form_gcom, name=('form-gcom')),
+    path('error-500/', e500, name=('error-500')),
 ]

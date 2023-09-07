@@ -58,7 +58,8 @@ def form_gcom(request):
     return render (request, 'form-gcom.html', context)
 
 def e500(request):
+    titulo = "Error 500"
     context={
-    
+      "titulo": titulo
     }
-    return render (request, 'form-gcom.html', context)
+    return render (request, 'e500.html', context)
