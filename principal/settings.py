@@ -17,24 +17,33 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
+
+
 # Application definition
 
 INSTALLED_APPS = [
+    'whitenoise.runserver_nostatic', #pip install whitenoise
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'bootstrap5', # pip install django-bootstrap-v5
+    'crispy_forms', #pip install django-crispy-forms
+    'crispy_bootstrap5', #pip install crispy-bootstrap5
+    # pip install django-select2 pip install django-redis
     'usuarios',
     'ciudades',
-    'clientes',
     'guia',
-    'bootstrap5', # python.exe -m pip install --upgrade pip
+    'clientes',
 ]
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware', #pip install whitenoise
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -114,10 +123,12 @@ STATICFILES_DIRS = [
   os.path.join(BASE_DIR, "static"),
 ]
 STATIC_ROOT= "/static"
-MEDIA_URL= '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGIN_URL= 'menu-ppal'
+LOGIN_REDIRECT_URL= 'menu-ppal'

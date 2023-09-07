@@ -1,0 +1,62 @@
+{% load static %}
+
+<main class="flex-grow-1 ">
+    <div class="container-fluid">
+      <div class="row">
+        <!-- MENU -->
+        <div class="col-12 col-md-3 ms-md-1 mt-5 order-0">
+          <!-- Generar Guia -->
+          <ul class="nav flex-column">
+            <div class="btn-group dropend">
+              <button class="btn btn-danger mb-2 fw-bold dropdown-toggle p-1" type="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Generar Guía
+              </button>
+              <ul class="dropdown-menu dropdown-menu-dark">
+                <li class="nav-item"><a class="dropdown-item nav-link" href="{% url 'cap-guia' %}">Capturar Guía</a></li>
+                <!-- Anular Guía -->
+                <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#modalAnular">Anular
+                    Guía</a>
+                </li>
+              </ul>
+            </div>
+            <!-- Rutero -->
+            <li class="nav-item">
+              <a href="{% url 'rutero' %}" class="btn btn-danger mb-2 fw-bold nav-link text-white p-1">Rutero</a>
+            </li>
+            <!-- Seguimiento de Clientes -->
+            <li class="nav-item">
+              <a href="{% url 'seg-cliente' %}"
+                class="btn btn-danger mb-2 fw-bold nav-link text-white p-1">Seguimiento de Clientes</a>
+            </li>
+            <!-- Proyeccion de Cumplimiento -->
+            <li class="nav-item">
+              <a href="{% url 'proy-cumpl' %}"
+                class="btn btn-danger mb-2 fw-bold nav-link text-white p-1">Proyección
+                De
+                Cumplimiento</a>
+            </li>
+            <!-- Ejecucion Acumulada -->
+            <li class="nav-item">
+              <a href="{% url 'eje-acu' %}" class="btn btn-danger mb-2 fw-bold nav-link text-white p-1">Ejecución
+                Acumulada</a>
+            </li>
+            <!-- Formatos Gestion Comercial -->
+            <li class="nav-item">
+              <a href="{% url 'form-gcom' %}" class="btn btn-danger mb-2 fw-bold nav-link text-white p-1">Formatos de
+                Gestión Comercial</a>
+            </li>
+            <div class="btn-group dropend">
+              <button class="btn btn-danger mb-2 fw-bold dropdown-toggle p-1" type="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Usuarios
+              </button>
+              <ul class="dropdown-menu dropdown-menu-dark">
+                <li class="nav-item"><a class="dropdown-item nav-link" href="{% url 'usuarios' %}">Listar</a></li>
+                <!-- Anular Guía -->
+                <li><a class="dropdown-item" href="{% url 'usuarios-crear' %}" >Crear</a>
+                </li>
+              </ul>
+            </div>
+          </ul>
+  </main>    

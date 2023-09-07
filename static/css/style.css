@@ -80,16 +80,17 @@ footer {
   background-color: var(--bg-color);
 }
 
-.bg-alpha-color {
-  background-color: var(--bg-alpha-color);
-}
-
 .bg-hero-image {
   background-image: url(../img/hero-image.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
+
+.bg-alpha-color {
+  background-color: var(--bg-alpha-color);
+}
+
 
 .fs-12 {
   font-size: 12px;
